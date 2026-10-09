@@ -1,0 +1,106 @@
+/* NOVA account and authentication UI */
+.nova-account-button{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink,#26352a);font:inherit;cursor:pointer;padding:7px 9px;white-space:nowrap}
+.account-dot{display:inline-grid;place-items:center;width:25px;height:25px;border:1px solid #d9ded3;border-radius:50%;font-size:12px;background:#f0f1e9;color:#344b3b}
+.account-label{font-size:12px}
+.auth-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(25,34,27,.55);display:grid;place-items:center;padding:22px;backdrop-filter:blur(5px)}
+.auth-modal{position:relative;width:min(100%,460px);max-height:calc(100vh - 44px);overflow:auto;background:#fffefa;color:#242a23;padding:42px 42px 32px;box-shadow:0 24px 80px rgba(0,0,0,.2)}
+.auth-close{position:absolute;right:16px;top:12px;border:0;background:transparent;font-size:30px;line-height:1;color:#526052;cursor:pointer}
+.auth-brand{font-size:32px;font-weight:800;letter-spacing:-2px;margin-bottom:25px}.auth-brand span{color:#7b8c70}
+.auth-modal .eyebrow{margin-bottom:14px}.auth-modal h2{font-family:Georgia,'Times New Roman',serif;font-size:42px;line-height:1.05;font-weight:400;letter-spacing:-1.5px;margin:0 0 12px}.auth-modal h2 em{color:#78896d;font-weight:400}
+.auth-intro{color:#777c73;font-size:13px;line-height:1.7;margin:0 0 24px}
+.auth-form{display:grid;gap:15px}.auth-form label{display:grid;gap:7px;font-size:12px;color:#4e584d;font-weight:600}.auth-form input{width:100%;box-sizing:border-box;border:1px solid #dedfd6;background:#fff;padding:13px 14px;font:inherit;font-size:13px;outline:none;border-radius:0}.auth-form input:focus{border-color:#74866e;box-shadow:0 0 0 2px rgba(116,134,110,.12)}
+.auth-submit{border:0;background:#263c2d;color:#fff;padding:15px 18px;margin-top:4px;font:inherit;font-size:12px;font-weight:600;cursor:pointer}.auth-submit:disabled{opacity:.65;cursor:wait}.auth-error{margin:0;color:#a3332b;font-size:12px;line-height:1.5;background:#fff0ee;padding:10px 12px}
+.auth-switch{text-align:center;font-size:12px;color:#73786f;margin:22px 0 12px}.auth-switch button{border:0;background:transparent;color:#304b37;text-decoration:underline;text-underline-offset:3px;font:inherit;font-weight:700;cursor:pointer}.auth-footnote{text-align:center;font-size:10px;color:#999d94;line-height:1.5;margin:0}
+@media(max-width:700px){.nova-account-button{padding:6px}.account-label{display:none}.auth-modal{padding:35px 24px 26px}.auth-modal h2{font-size:36px}}
+
+
+/* NOVA checkout and order history */
+.checkout-modal,
+.orders-modal {
+  max-height: 88vh;
+  overflow-y: auto;
+}
+.checkout-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.order-history-list {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+.order-history-card {
+  border: 1px solid rgba(40, 48, 35, 0.14);
+  border-radius: 12px;
+  padding: 14px;
+  display: grid;
+  gap: 7px;
+}
+.order-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.order-history-top span {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #edf0e8;
+}
+.order-history-card p,
+.order-history-card small {
+  margin: 0;
+  opacity: 0.72;
+}
+@media (max-width: 520px) {
+  .checkout-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.tracking-progress {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  margin: 18px 0;
+}
+
+.tracking-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+  position: relative;
+}
+
+.tracking-dot {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #c9cbbf;
+  border-radius: 50%;
+  font-size: 12px;
+  background: #fff;
+  color: #666;
+}
+
+.tracking-step.completed .tracking-dot {
+  background: #344532;
+  border-color: #344532;
+  color: #fff;
+}
+
+.tracking-step small {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.tracking-cancelled {
+  color: #a33b32;
+  font-weight: 600;
+}
